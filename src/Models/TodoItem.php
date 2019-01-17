@@ -20,6 +20,15 @@ class TodoItem extends Model
 
     public static function updateTodo($todoId, $title, $completed = null)
     {
+        $query = "UPDATE todos 
+        SET title = '$title', completed = 'true'
+        WHERE id = '$todoId'";
+
+        self::$db->query($query);
+
+        $result = self::$db->execute();
+
+        return $result;
         // //     // TODO: Implement me!
         // //     // Update a specific todo
     }

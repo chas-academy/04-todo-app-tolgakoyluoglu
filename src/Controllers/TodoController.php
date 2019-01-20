@@ -31,6 +31,8 @@ class TodoController extends Controller
 
         if ($result) {
             $this->redirect('/');
+        } else {
+            throw new Exception('Could not update the todo, try again.');
         }
 
         // TODO: Implement me!
